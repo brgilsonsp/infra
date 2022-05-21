@@ -1,0 +1,20 @@
+### Image
+    brgilsonsp/vsftp_ubuntu
+    
+### Environments
+    FTP_USER=<user client FTP>
+    FTP_PASS=<password of the client>
+    PASV_ADDRESS=<IP your host>
+
+### Network
+    network=bridge
+
+### Volume
+    <your volume>:/home/vsftpd
+
+### Options
+    --restart=always
+    --name <name your container>
+
+## Exemplo
+docker run -d -v C:/Users/brgil/ftp:/home/vsftpd -p 20:20 -p 21:21 -p 47400-47470:47400-47470 -e FTP_USER=gil -e FTP_PASS=gil123 -e PASV_ADDRESS=127.0.0.1 --name ftp --restart=always brgilsonsp/vsftp_ubuntu

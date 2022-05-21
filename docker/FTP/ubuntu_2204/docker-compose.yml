@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  vsftp_ubuntu:
+    image: brgilsonsp/vsftp_ubuntu
+    container_name: vsftp_ubuntu
+    volumes:
+      - C:/Users/brgil/ftp:/home/vsftpd
+    network_mode: bridge
+    ports:
+      - "20:20"
+      - "21:21"
+      - "47400-47470:47400-47470"
+    environment:
+      - FTP_USER=gil
+      - FTP_PASS=gil123
+      - PASV_ADDRESS=127.0.0.1
+    restart: always
