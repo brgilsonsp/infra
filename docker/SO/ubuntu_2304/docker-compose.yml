@@ -1,0 +1,6 @@
+version: "3.9"
+
+services:
+  ubuntu_lunar_2304:
+    image: brgilsonsp/ubuntu_lunar_2304
+    build: .
